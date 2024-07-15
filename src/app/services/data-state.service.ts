@@ -7,7 +7,7 @@ import { pwdChecker } from '../interfaces/data-interface';
 export class DataStateService {
   pwdStrength:number =0;
   generatedPwd:string=''
-  pwdLength:number = 50
+  pwdLength:number = 10
   uppercase:number = 0
   lowercase:number = 0
   numbers:number = 0

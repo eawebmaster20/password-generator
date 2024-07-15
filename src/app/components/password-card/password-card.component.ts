@@ -17,13 +17,14 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSliderModule
   ],
   templateUrl: './password-card.component.html',
-  styleUrl: './password-card.component.scss'
+  styleUrls: ['./password-card.component.scss','./password-card-mobile.component.scss']
 })
 export class PasswordCardComponent {
   uppercase:number = 0
   lowercase:number = 0
   numbers:number = 0
   symbols:number = 0
+  strengthClass:string = ''
   pwdStringData:string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?"
   constructor(public dataStateService: DataStateService){}
 
@@ -35,12 +36,19 @@ export class PasswordCardComponent {
     this.dataStateService.pwdChecker.symbol ? this.symbols = 25 : this.symbols=0;
 
     this.dataStateService.pwdStrength = this.uppercase + this.lowercase + this.numbers + this.symbols;
+
+    this.dataStateService.pwdStrength === 25 ? this.strengthClass = 'danger-fill':''
+    this.dataStateService.pwdStrength === 50 ? this.strengthClass = 'warning-fill':''
+    this.dataStateService.pwdStrength > 51 ? this.strengthClass = 'green-fill':''
   }
 
   generatePwd(){
     for (let i = 0; i < this.dataStateService.pwdLength; i++) {
       let index = Math.floor(Math.random()*this.pwdStringData.length)
       this.dataStateService.generatedPwd += this.pwdStringData[index]
+      // this.pwdStringData.replace(this.pwdStringData.charAt(index),'')
     }
+    this.dataStateService.generatedPwd = this.dataStateService.generatedPwd.slice(0, this.dataStateService.pwdLength)
+    console.log(this.dataStateService.generatedPwd)
   }
 }
