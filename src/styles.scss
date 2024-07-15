@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+// @font-face {
+//     font-family: 'MyCustomFont';
+//     src: url('./assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+//     font-weight: bold;
+//     font-style: bold;
+// }
+
+// @font-face {
+//     font-family: 'MyCustomFont';
+//     src: url('./assets/fonts/static/JetBrainsMono-BoldItalic.ttf') format('truetype');
+//     font-weight: bold;
+//     font-style: italic;
+// }
+
+// @font-face {
+//     font-family: 'jetBainFont';
+//     src: url('./assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'jetBainFont';
+//     src: url('./assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: italic;
+// }
+html, body { height: 100%; }
+body {
+     margin: 0; 
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+     width: 100vw;
+     height: 100vh;
+     background-color: #18171F;
+ }
