@@ -24,6 +24,7 @@ export class PasswordCardComponent {
   lowercase:number = 0
   numbers:number = 0
   symbols:number = 0
+  pwdStringData:string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?"
   constructor(public dataStateService: DataStateService){}
 
   update(){
@@ -34,5 +35,12 @@ export class PasswordCardComponent {
     this.dataStateService.pwdChecker.symbol ? this.symbols = 25 : this.symbols=0;
 
     this.dataStateService.pwdStrength = this.uppercase + this.lowercase + this.numbers + this.symbols;
+  }
+
+  generatePwd(){
+    for (let i = 0; i < this.dataStateService.pwdLength; i++) {
+      let index = Math.floor(Math.random()*this.pwdStringData.length)
+      this.dataStateService.generatedPwd += this.pwdStringData[index]
+    }
   }
 }
