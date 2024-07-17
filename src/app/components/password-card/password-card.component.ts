@@ -100,10 +100,6 @@ console.log(this.pwdStringData);
         this.strengthClass = 'warning-fill';
         this.strength= 'WEAK'
       }
-      // else{
-      //   this.strengthClass = 'danger-fill'
-      //   this.strength= 'TOO WEAK'
-      // }
       if (this.dataStateService.pwdStrength === 50 && this.dataStateService.generatedPwd.length > 7) {
         this.strengthClass ='normal-fill';
         this.strength = 'MEDIUM';
@@ -112,23 +108,8 @@ console.log(this.pwdStringData);
         this.strengthClass ='normal-fill';
         this.strength = 'MEDIUM';
       }
-      else{
-        this.strengthClass = 'warning-fill'
-        this.strength= 'WEAK'
-      }
       
     };
-
-    
-    // password is of two character types
-    // this.dataStateService.generatedPwd.length > 7 && 
-    // this.dataStateService.pwdStrength === 50 ? 
-    // (this.strengthClass ='normal-fill', this.strength = 'MEDIUM'):'';
-
-    // password is of two character types
-    // this.dataStateService.generatedPwd.length > 11 && 
-    // this.dataStateService.pwdStrength > 50 ? 
-    // (this.strengthClass ='green-fill', this.strength = 'STRONG'):'normal-fill';
     this.pwdStringData = ''
     console.log(this.dataStateService.generatedPwd.length, this.dataStateService.pwdStrength, this.strengthClass)
 
